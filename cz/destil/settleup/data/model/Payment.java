@@ -64,7 +64,7 @@ public class Payment implements Serializable, Comparable<Payment> {
             List<Double> weightsList = new ArrayList<Double>();
             if (forWho != null) {
                 for (@SuppressWarnings("unused")
-                long _ : forWho) {
+                long forWhom : forWho) {
                     weightsList.add((double) 1);
                 }
             }
