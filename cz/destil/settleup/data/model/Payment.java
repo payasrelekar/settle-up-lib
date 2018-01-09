@@ -30,12 +30,7 @@ public class Payment implements Serializable, Comparable<Payment> {
     public long groupId;
     public boolean transfer;
     public String onlineId;
-    // for converting to single currency
-    public List<BigDecimal> convertedAmounts;
-    public String convertedCurrency;
-    public boolean converted = false;
-    private String currency;
-
+    
     public Payment(String amounts, String forWho, String purpose, String whoPaid, String weights, long datetime,
                    String currency, boolean transfer, long groupId, String onlineId) {
         this.amounts = Utils.splitToBigDecimals(amounts);
@@ -46,7 +41,6 @@ public class Payment implements Serializable, Comparable<Payment> {
         // Needed otherwise it will crash on payments from demo group and
         // elsewhere
         normalizeWeights();
-        this.currency = currency;
         this.datetime = datetime;
         this.transfer = transfer;
         this.groupId = groupId;
@@ -60,10 +54,6 @@ public class Payment implements Serializable, Comparable<Payment> {
     public void setAmount(BigDecimal amount) {
         this.amounts = new ArrayList<BigDecimal>();
         amounts.add(amount);
-    }
-
-    public BigDecimal getConvertedAmount() {
-        return BigDecimals.sum(convertedAmounts);
     }
 
     /**
