@@ -12,8 +12,6 @@ import android.text.TextUtils;*/
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
 
 import cz.destil.settleup.util.BigDecimals;
