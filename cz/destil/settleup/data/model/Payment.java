@@ -1,13 +1,13 @@
 package cz.destil.settleup.data.model;
 
-import android.content.ContentUris;
+/*import android.content.ContentUris;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
 import android.provider.BaseColumns;
-import android.text.TextUtils;
+import android.text.TextUtils;*/
 
 import java.io.Serializable;
 import java.math.BigDecimal;
@@ -82,22 +82,10 @@ public class Payment implements Serializable, Comparable<Payment> {
         }
     }
 
-    public String getCurrency() {
-        if (TextUtils.isEmpty(currency)) {
-            return Payments.getLastCurrency(groupId);
-        } else {
-            return currency;
-        }
-    }
-
-    public void setCurrency(String currency) {
-        this.currency = currency;
-    }
-
     @Override
     public String toString() {
         return "a=" + this.amounts + "who=" + this.whoPaid + "for=" + this.forWho + "pur=" + this.purpose + "wei="
-                + this.weights + "curr=" + this.currency;
+                + this.weights;
     }
 
     @Override
