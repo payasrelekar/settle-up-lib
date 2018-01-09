@@ -28,7 +28,6 @@ public class Member implements Comparable<Member> {
 	public BigDecimal spentInCalculation;
 	public String sharedToEmail;
 	public boolean disabled;
-	public String bankAccount;
 
 	public Member(long id, String name, String email, long groupId, String bankAccount) {
 		this.id = id; // will be changed by insert operation
@@ -40,7 +39,6 @@ public class Member implements Comparable<Member> {
 		this.removedFromCalculation = false;
 		this.sharedToEmail = email;
 		this.disabled = false;
-		this.bankAccount = bankAccount;
 	}
 
 	public Member(long id, String name, String email, double defaultWeight, int groupShared, long groupId,
@@ -55,7 +53,6 @@ public class Member implements Comparable<Member> {
 		this.removedFromCalculation = false;
 		this.sharedToEmail = sharedToEmail;
 		this.disabled = (disabled == 1);
-		this.bankAccount = bankAccount;
 	}
 
 	public BigDecimal getBalance() {
